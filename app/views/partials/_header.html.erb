@@ -1,0 +1,96 @@
+
+			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+
+        <!-- TOP NAV -->
+        <header id="topNav">
+          <div class="container">
+
+            <!-- Mobile Menu Button -->
+            <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+              <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Logo -->
+            <!-- scrollTo -->
+            <a class="logo float-left scrollTo" href="#top">
+              <!-- img src="assets/images/_rocket/R2.png" alt="" / -->
+              <%= image_tag "_rocket/R2.png", :alt => "cover image", :data_bgposition => "center top", :data_bgfit => "cover", :data_bgrepeat => "no-repeat" %>
+            </a>
+
+            <!-- Top Nav -->
+            <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+              <nav class="nav-main">
+
+                <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+                  <li class>
+                      <!-- HOME -->
+                      <%= link_to "HOME" , root_path %>
+                  </li>
+                  <li><!-- SERVICES -->
+                    <a href="#services" class="dropdown-toggle">
+                      SERVICES
+                    </a>
+                    <!-- <a href="#services">
+                      SERVICES
+                    </a> -->
+                    <ul class="dropdown-menu white-space= normal">
+                      <li>
+                        <%= link_to "RESIDENTIAL", pages_residential_path(anchor: "vacuum-home") %>
+                      </li>
+                      <li>
+                        <%= link_to "COMMERCIAL", pages_commercial_path(anchor: "observation-elevator") %>
+                      </li>
+                      <li>
+                        <%= link_to "REQUEST A QUOTE", pages_quote_path(anchor: "request-quote") %>
+                      </li>
+                    </ul>
+                  </li>
+
+                                <li><!-- PORTFOLIO -->
+                                    <!-- id="portfolio-nav" -->
+                                    <%= link_to "PORTFOLIO", root_path(anchor: "portfolio") %>
+                                </li>
+                                <li><!-- NEWS -->
+                                    <%= link_to "NEWS", 
+                                    root_path(anchor: "news") 
+                                    %>
+                                </li>
+                                <li><!-- CLIENTS -->
+                                    <%= link_to "CLIENTS", 
+                                    root_path(anchor: "clients") 
+                                    %>
+                                </li>
+                                <li><!-- CONTACT -->
+                                    <%= link_to "CONTACT", 
+                                    root_path(anchor: "contact") 
+                                    %>
+
+                                </li>
+                                <% if user_signed_in? %>
+                                    <li><!-- SIGN OUT -->
+                                        <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %>
+                                    </li>
+                                    <li>
+                                        <%= link_to "ADMIN", rails_admin_path %>
+                                    </li>
+									<li>
+                                        <%= link_to "STATS", pages_charts_path %>
+                                    </li>
+									<li>
+                                        <%= link_to "ADMIN_STATS", pages_admin_stats_path %>
+                                    </li>
+                                <% else %>
+                                    <li><!-- SIGN IN -->
+                                        <%= link_to "SIGN IN", new_user_session_path %>
+                                    </li>
+                                <% end %>
+                            </ul>
+
+              </nav>
+            </div>
+
+          </div>
+        </header>
+        <!-- /Top Nav -->
+      </div>
+     

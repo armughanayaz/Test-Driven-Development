@@ -1,0 +1,28 @@
+# Watson
+TEXT_TO_SPEECH_APIKEY: "uY7fn3tRRvMCDvu1u51pbo52xrUY_EQ4ckhKsMQgCdbe"
+TEXT_TO_SPEECH_URL: "https://api.au-syd.text-to-speech.watson.cloud.ibm.com/instances/e48f1928-f47d-47d5-8e37-de26b9b361b8"
+# Sendgrid
+SENDGRID_APIKEY: "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"
+# Dropbox
+DROPBOX_TOKEN: "oEtmw2a3jcYAAAAAAAAAAZCpoqIRP3mq8gda7wj0O12Oxqgvf72lYk8bIQ5OF2Lt"
+DROPBOX_KEY: "nmhljn1ltn9hlz2"
+DROPBOX_SECRET: "8amfyjy9pqcuw72"
+# Slack
+SLACK_API_TOKEN: "xoxb-461156293569-2739886197684-o8EmO4FYr4tDz6ljTmOMYP9Q"
+SLACK_API_TOKEN_DEV: "xoxb-340694917717-2733964429509-EXvq8eEBKKl9Z1e3mKS2KDpB"
+# Twilio
+account_sid: 'AC0dfb05f51774f771de15fec6c5e4745e'
+auth_token: 'ac33168cb962c9549af8858171618ec6'
+phone_number: '+15147959688'
+# Zendesk
+ZENDESK_URL: "https://rocketlift.zendesk.com/api/v2"
+ZENDESK_USERNAME: "alexwallot@outlook.com"
+ZENDESK_APIKEY: "XtKhfODI7VoGQwPyiB2mDeYUMERX0YZUk5NV4cpI"
+  
+# Google Maps
+MAP_SOURCE: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCbt5Jh9HUerVLKOELNPSa7QMDxis2J3Do&callback=initMap"
+# Database
+MYSQL_USERNAME: 'ted'
+MYSQL_PASSWORD: 'tedtedted'
+POSTGRESQL_USERNAME: 'lemyt'
+POSTGRESQL_PASSWORD: 'tedtedted'
