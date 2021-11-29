@@ -1,1 +1,1 @@
-# consoidation
+# consolidation
