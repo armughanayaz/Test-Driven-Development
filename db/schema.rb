@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_16_190401) do
+ActiveRecord::Schema.define(version: 2021_12_02_153557) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "typeAddress", null: false
@@ -125,6 +125,30 @@ ActiveRecord::Schema.define(version: 2021_11_16_190401) do
     t.index ["user_id"], name: "fk_rails_dcfd3d4fc3"
   end
 
+  create_table "interventions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "author", null: false
+    t.bigint "customerId", null: false
+    t.bigint "buildingId", null: false
+    t.bigint "batterieId", null: false
+    t.bigint "columnId"
+    t.bigint "elevatorId"
+    t.integer "employeeId"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "result"
+    t.string "report"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author"], name: "fk_rails_372877a32f"
+    t.index ["batterieId"], name: "fk_rails_55c902a501"
+    t.index ["buildingId"], name: "fk_rails_3233a3b0a2"
+    t.index ["columnId"], name: "fk_rails_ad19160f0e"
+    t.index ["customerId"], name: "fk_rails_2c65c5b1b0"
+    t.index ["elevatorId"], name: "fk_rails_5d8cacca3c"
+    t.index ["employeeId"], name: "fk_rails_7f22c0545e"
+  end
+
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "fullNameContact", null: false
     t.string "compagnyName", null: false
@@ -178,4 +202,11 @@ ActiveRecord::Schema.define(version: 2021_11_16_190401) do
   add_foreign_key "customers", "users", column: "userId"
   add_foreign_key "elevators", "columns", column: "columnId"
   add_foreign_key "employees", "users"
+  add_foreign_key "interventions", "batteries", column: "batterieId"
+  add_foreign_key "interventions", "buildings", column: "buildingId"
+  add_foreign_key "interventions", "columns", column: "columnId"
+  add_foreign_key "interventions", "customers", column: "customerId"
+  add_foreign_key "interventions", "elevators", column: "elevatorId"
+  add_foreign_key "interventions", "employees", column: "author"
+  add_foreign_key "interventions", "employees", column: "employeeId"
 end

@@ -1,4 +1,5 @@
-class Elevator < ApplicationRecord    
+class Elevator < ApplicationRecord  
+    has_many :interventions  
     after_update :slack
     def slack_message
         statusChanges = self.previous_changes[:status]

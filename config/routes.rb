@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :interventions
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'pages#index'
@@ -10,5 +11,8 @@ Rails.application.routes.draw do
   get '/quote/new', to: 'quote#new'
   post '/quote', to: 'quote#create'
   post '/contact', to: 'contact#create'
+
+  get '/get_buildings/:customerId', to: 'interventions#get_buildings'
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

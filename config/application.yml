@@ -15,14 +15,14 @@ account_sid: 'AC0dfb05f51774f771de15fec6c5e4745e'
 auth_token: 'ac33168cb962c9549af8858171618ec6'
 phone_number: '+15147959688'
 # Zendesk
-ZENDESK_URL: "https://rocketlift.zendesk.com/api/v2"
-ZENDESK_USERNAME: "alexwallot@outlook.com"
-ZENDESK_APIKEY: "XtKhfODI7VoGQwPyiB2mDeYUMERX0YZUk5NV4cpI"
-  
+
+ZENDESK_URL: "https://armughanajcodeboxx.zendesk.com/api/v2"
+ZENDESK_USERNAME: "armughanajcodeboxx@gmail.com"
+ZENDESK_APIKEY: "4lxSpZEwTZDNp0yr5u5pYO5Hwhql8uIh1yxtx07L"  
 # Google Maps
 MAP_SOURCE: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCbt5Jh9HUerVLKOELNPSa7QMDxis2J3Do&callback=initMap"
 # Database
-MYSQL_USERNAME: 'ted'
-MYSQL_PASSWORD: 'tedtedted'
-POSTGRESQL_USERNAME: 'lemyt'
-POSTGRESQL_PASSWORD: 'tedtedted'
+MYSQL_USERNAME: 'root'
+MYSQL_PASSWORD: 'janjua123'
+POSTGRESQL_USERNAME: 'postgres'
+POSTGRESQL_PASSWORD: ''

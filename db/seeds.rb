@@ -59,74 +59,74 @@ statusA = ['online','down','up','offline','maintenance','busy','crowded','empty'
 informationA =['type', 'construction_year', 'elevator_shaft_amount','amount_of_floor','building_status' , 'model','status','number_of_occupants' ]
 
 id = 1
-100.times do
-    random = typeA.sample
-    if random == 'residential' then
-        Quote.create([{
-        id: id,
-        type_building: 'residential',
-        numApartment: Faker::Number.between(from: 10, to: 500),
-        numFloor: Faker::Number.between(from: 1, to: 80),
-        numElevator: Faker::Number.between(from: 1, to: 30),
-        compagnyName: Faker::Company.name,
-        email: Faker::Internet.email,
-        created_at: Faker::Date.between(from: '2018-01-01', to: '2021-10-01'),
-        typeService: modelA.sample,
-        totalElevatorPrice: Faker::Number.between(from: 10000, to: 30000),
-        total:Faker::Number.between(from: 100000, to: 300000),
-        installationFees:Faker::Number.between(from: 10000, to: 30000)
-        }])
+# 100.times do
+#     random = typeA.sample
+#     if random == 'residential' then
+#         Quote.create([{
+#         id: id,
+#         type_building: 'residential',
+#         numApartment: Faker::Number.between(from: 10, to: 500),
+#         numFloor: Faker::Number.between(from: 1, to: 80),
+#         numElevator: Faker::Number.between(from: 1, to: 30),
+#         compagnyName: Faker::Company.name,
+#         email: Faker::Internet.email,
+#         created_at: Faker::Date.between(from: '2018-01-01', to: '2021-10-01'),
+#         typeService: modelA.sample,
+#         totalElevatorPrice: Faker::Number.between(from: 10000, to: 30000),
+#         total:Faker::Number.between(from: 100000, to: 300000),
+#         installationFees:Faker::Number.between(from: 10000, to: 30000)
+#         }])
     
-    elsif random == 'commercial' then
-        Quote.create([{
-        id: id,
-        type_building: 'commercial',
-        numElevator: Faker::Number.between(from: 10, to: 40),
-        compagnyName: Faker::Company.name,
-        email: Faker::Internet.email,
-        created_at: Faker::Date.between(from: '2018-01-01', to: '2021-10-01'),
-        typeService: modelA.sample,
-        totalElevatorPrice: Faker::Number.between(from: 10000, to: 30000),
-        total:Faker::Number.between(from: 100000, to: 300000),
-        installationFees:Faker::Number.between(from: 10000, to: 30000)
-        }])
+#     elsif random == 'commercial' then
+#         Quote.create([{
+#         id: id,
+#         type_building: 'commercial',
+#         numElevator: Faker::Number.between(from: 10, to: 40),
+#         compagnyName: Faker::Company.name,
+#         email: Faker::Internet.email,
+#         created_at: Faker::Date.between(from: '2018-01-01', to: '2021-10-01'),
+#         typeService: modelA.sample,
+#         totalElevatorPrice: Faker::Number.between(from: 10000, to: 30000),
+#         total:Faker::Number.between(from: 100000, to: 300000),
+#         installationFees:Faker::Number.between(from: 10000, to: 30000)
+#         }])
         
-    elsif random == 'corporate' then
-        Quote.create([{
-        id: id,
-        type_building: 'corporate',
-        numApartment: Faker::Number.between(from: 10, to: 500),
-        numFloor: Faker::Number.between(from: 1, to: 80),
-        numOccupant: Faker::Number.between(from: 1, to: 80),
-        numElevator: Faker::Number.between(from: 1, to: 30),
-        compagnyName: Faker::Company.name,
-        email: Faker::Internet.email,
-        created_at: Faker::Date.between(from: '2018-01-01', to: '2021-10-01'),
-        typeService: modelA.sample,
-        totalElevatorPrice: Faker::Number.between(from: 10000, to: 30000),
-        total:Faker::Number.between(from: 100000, to: 300000),
-        installationFees:Faker::Number.between(from: 10000, to: 30000)
-        }])
+#     elsif random == 'corporate' then
+#         Quote.create([{
+#         id: id,
+#         type_building: 'corporate',
+#         numApartment: Faker::Number.between(from: 10, to: 500),
+#         numFloor: Faker::Number.between(from: 1, to: 80),
+#         numOccupant: Faker::Number.between(from: 1, to: 80),
+#         numElevator: Faker::Number.between(from: 1, to: 30),
+#         compagnyName: Faker::Company.name,
+#         email: Faker::Internet.email,
+#         created_at: Faker::Date.between(from: '2018-01-01', to: '2021-10-01'),
+#         typeService: modelA.sample,
+#         totalElevatorPrice: Faker::Number.between(from: 10000, to: 30000),
+#         total:Faker::Number.between(from: 100000, to: 300000),
+#         installationFees:Faker::Number.between(from: 10000, to: 30000)
+#         }])
 
-    elsif random == 'hybrid' then
-        Quote.create([{
-        id: id,
-        type_building: 'hybrid',
-        numApartment: Faker::Number.between(from: 10, to: 500),
-        numFloor: Faker::Number.between(from: 1, to: 80),
-        numOccupant: Faker::Number.between(from: 1, to: 80),
-        numElevator: Faker::Number.between(from: 1, to: 30),
-        compagnyName: Faker::Company.name,
-        email: Faker::Internet.email,
-        created_at: Faker::Date.between(from: '2018-01-01', to: '2021-10-01'),
-        typeService: modelA.sample,
-        totalElevatorPrice: Faker::Number.between(from: 10000, to: 30000),
-        total:Faker::Number.between(from: 100000, to: 300000),
-        installationFees:Faker::Number.between(from: 10000, to: 30000)
-        }])
-    end
-    id = id + 1
-end
+#     elsif random == 'hybrid' then
+#         Quote.create([{
+#         id: id,
+#         type_building: 'hybrid',
+#         numApartment: Faker::Number.between(from: 10, to: 500),
+#         numFloor: Faker::Number.between(from: 1, to: 80),
+#         numOccupant: Faker::Number.between(from: 1, to: 80),
+#         numElevator: Faker::Number.between(from: 1, to: 30),
+#         compagnyName: Faker::Company.name,
+#         email: Faker::Internet.email,
+#         created_at: Faker::Date.between(from: '2018-01-01', to: '2021-10-01'),
+#         typeService: modelA.sample,
+#         totalElevatorPrice: Faker::Number.between(from: 10000, to: 30000),
+#         total:Faker::Number.between(from: 100000, to: 300000),
+#         installationFees:Faker::Number.between(from: 10000, to: 30000)
+#         }])
+#     end
+#     id = id + 1
+# end
 
 userId = 22
 179.times do

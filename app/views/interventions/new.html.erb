@@ -1,0 +1,184 @@
+<h1>New Intervention</h1>
+
+<!-- INTERVENTION FORM -->
+<!-- % if user_signed_in? && current_user.is_employee(current_user.email) % --> 
+  <li>
+
+<br/><br/><br/><br/><br/>
+
+<%= form_tag "/intervention", method: 'post' do %>
+<div id="formbackground" style="background-image: url('/assets/background_elevator.jpg');">
+	<div class="container  formStyle">
+	  <h1> Intervention Request Form </h1>
+	  <h3> Please start by selecting the client</h3>
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+		<div class="row">
+			<div class="col-md-12 d-flex justify-content-center">
+				<!-- entity selector--> 
+			<%= form_for @intervention.to_s, method: :post, remote: true  do |f| %>
+            <div class="field">
+			<%= f.label :ClientName %><br />
+             <%= f.collection_select :customerId, Customer.order(:id), :id, :contact_full_name, include_blank: true, :required => true %>
+            </div>
+			<div class="field" id="Building">
+				<%= f.label :buildingId %><br />
+				<%= f.grouped_collection_select  :buildingId, Customer.order(:id), :buildings, :contact_full_name, :id, :id, include_blank: true, :required => true %>
+			</div>
+			<div class="field">
+				<%= f.label :batterieId %><br />
+				<%= f.grouped_collection_select :batterieId, Building.order(:id), :batteries, :id, :building_id, :id, include_blank: true, :required => true %>
+			</div>
+			<div class="field">
+				<%= f.label :columnId %><br />
+				<%= f.grouped_collection_select :columnId, Batterie.order(:id), :columns, :id, :battery_id, :id, include_blank: true , :required => true%>
+			</div>
+			<div class="field">
+				<%= f.label :elevatorId %><br />
+				<%= f.grouped_collection_select :elevatorId, Column.order(:id), :elevators, :id, :column_id, :id, include_blank: true, :required => true %>
+			</div>				
+                                                      
+
+
+				<!-- Author selection--> 
+			</div>
+		</div>
+ <%= f.hidden_field :author, { :value => current_user.id } %>
+		<div class="row">
+			<div class="col-md-12 d-flex justify-content-center">
+				<!-- employee selection--> 
+            <div class="field">
+			<%= f.label :EmployeeName %><br />
+             <%= f.collection_select :employeeId, Employee.order(:id), :id, :first_name, {:prompt => "None"}, include_blank: true , :required => true%>
+            </div>                                                   
+                <!-- / Description Select -->
+			</div>
+		</div>       
+		<div class="row">
+    <%= f.label :Description, :required => true %>
+		</div>
+
+		<%# BUTTON SUBMIT %>
+				  <div class="actions"><%= f.submit %></div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+<%end%>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>   
+<%end%>
+
+	</li>
+<!-- % else % -->
+	
+
+
+<div style="background-image: url('/assets/background_elevator.jpg');">
+	<div class="container">
+	    <br/><br/><br/><br/><br/><br/><br/><br/>
+
+<h1> Only emloyess can log in by pressing the button below to acess this section, Thank you!</h1>
+
+
+</div>
+<h2>	<%= link_to('Login', new_user_session_path) %>  </h2>
+</div>
+<!-- %end% -->
+	<!-- /JavaScript/JQuery inputs -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+clients = $('#intervention_CustomerId').html()
+//  console.log(clients)
+buildings = $('#intervention_BuildingId').html()
+// console.log(buildings)
+batteries = $('#intervention_BatterieId').html()
+// console.log(batteries)
+columns = $('#intervention_ColumnId').html()
+// console.log(columns)
+elevators = $('#intervention_ElevatorId').html()
+// console.log(elevators)
+
+
+
+
+
+
+     $('#intervention_BuildingId').parent().hide();
+     $('#intervention_BatterieId').parent().hide();
+     $('#intervention_ColumnId').parent().hide();
+     $('#intervention_ElevatorId').parent().hide();
+     $('#intervention_CustomerId').change(function() {
+
+  client = $('#intervention_CustomerId :selected').text();
+
+  options = $(buildings).filter("optgroup[label='" + client + "']").html();
+
+  if (options) {
+	//  console.log('here1');
+	 blank_selected_option = '<option selected="selected"></option>'
+	 options = blank_selected_option + options;
+	//   console.log(options);
+    $('#intervention_BuildingId').html(options).parent().show();
+
+  } else {
+    $('#intervention_BuildingId').empty().parent().hide();
+   
+  }
+
+
+  $('#intervention_BuildingId').change(function() {
+
+  building = $('#intervention_BuildingId :selected').text();
+
+  options = $(batteries).filter("optgroup[label='" + building + "']").html();
+
+  if (options) {
+	 blank_selected_option = '<option selected="selected"></option>'
+	 options = blank_selected_option + options;
+    $('#intervention_BatterieId').html(options).parent().show();
+
+  } else {
+    $('#intervention_BatterieId').empty().parent().hide();
+  }
+
+
+
+  $('#intervention_BatterieId').change(function() {
+
+  batterie = $('#intervention_BatterieId :selected').text();
+
+  options = $(columns).filter("optgroup[label='" + batterie + "']").html();
+
+  if (options) {
+	 none_selected_option = '<option selected="selected" value="None">None</option>'
+	 options = none_selected_option + options;
+    $('#intervention_ColumnId').html(options).parent().show();
+
+  } else {
+    $('#intervention_ColumnId').empty().parent().hide();
+  }
+
+
+  $('#intervention_ColumnId').change(function() {
+
+  column = $('#intervention_ColumnId :selected').text();
+
+  options = $(elevators).filter("optgroup[label='" + column + "']").html();
+
+  if (options) {
+	 none_selected_option = '<option selected="selected" value="None">None</option>'
+	 options = none_selected_option + options;
+    $('#intervention_ElevatorId').html(options).parent().show();
+
+  } else {
+    $('#intervention_ElevatorId').empty().parent().hide();
+  }
+
+});
+
+
+</script>
