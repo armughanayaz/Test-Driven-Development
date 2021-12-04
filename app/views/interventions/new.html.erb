@@ -18,25 +18,29 @@
 			<%= form_for @intervention.to_s, method: :post, remote: true  do |f| %>
             <div class="field">
 			<%= f.label :ClientName %><br />
-             <%= f.collection_select :customerId, Customer.order(:id), :id, :contact_full_name, include_blank: true, :required => true %>
+             <%= f.collection_select :customerId, Customer.order(:id), :id, :fullName, include_blank: true, :required => true %>
             </div>
 			<div class="field" id="Building">
 				<%= f.label :buildingId %><br />
-				<%= f.grouped_collection_select  :buildingId, Customer.order(:id), :buildings, :contact_full_name, :id, :id, include_blank: true, :required => true %>
+				<%= f.collection_select  :buildingId, Customer.order(:id), :customer :fullName, :id, :id, include_blank: true, :required => true %>
 			</div>
 			<div class="field">
 				<%= f.label :batterieId %><br />
-				<%= f.grouped_collection_select :batterieId, Building.order(:id), :batteries, :id, :building_id, :id, include_blank: true, :required => true %>
+				<%= f.collection_select :batterieId, Building.order(:id), :batteries, :id, :buildingId, :id, include_blank: true, :required => true %>
 			</div>
 			<div class="field">
 				<%= f.label :columnId %><br />
-				<%= f.grouped_collection_select :columnId, Batterie.order(:id), :columns, :id, :battery_id, :id, include_blank: true , :required => true%>
+				<%= f.collection_select :columnId, Batterie.order(:id), :columns, :id, :batteryId, :id, include_blank: true , :required => true%>
 			</div>
 			<div class="field">
 				<%= f.label :elevatorId %><br />
-				<%= f.grouped_collection_select :elevatorId, Column.order(:id), :elevators, :id, :column_id, :id, include_blank: true, :required => true %>
+				<%= f.collection_select :elevatorId, Column.order(:id), :elevators, :id, :column_id, :id, include_blank: true, :required => true %>
 			</div>				
-                                                      
+
+               <div class="Text">
+				<%= f.label :Post %><br />
+				<%= f.collection_select :elevatorId, Column.order(:id), :elevators, :id, :column_id, :id, include_blank: true, :required => true %>
+			</div>                           
 
 
 				<!-- Author selection--> 
@@ -92,15 +96,15 @@
 <script>
 
 clients = $('#intervention_CustomerId').html()
-//  console.log(clients)
+
 buildings = $('#intervention_BuildingId').html()
-// console.log(buildings)
+
 batteries = $('#intervention_BatterieId').html()
-// console.log(batteries)
+
 columns = $('#intervention_ColumnId').html()
-// console.log(columns)
+
 elevators = $('#intervention_ElevatorId').html()
-// console.log(elevators)
+
 
 
 
@@ -118,10 +122,10 @@ elevators = $('#intervention_ElevatorId').html()
   options = $(buildings).filter("optgroup[label='" + client + "']").html();
 
   if (options) {
-	//  console.log('here1');
+	
 	 blank_selected_option = '<option selected="selected"></option>'
 	 options = blank_selected_option + options;
-	//   console.log(options);
+	
     $('#intervention_BuildingId').html(options).parent().show();
 
   } else {
