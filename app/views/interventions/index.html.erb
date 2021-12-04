@@ -22,25 +22,12 @@
   </thead>
 
   <tbody>
-    <% @interventions.each do |intervention| %>
+    <!-- % @interventions.each do |intervention| % -->
       <tr>
-        <td><%= intervention.author %></td>
-        <td><%= intervention.customerId %></td>
-        <td><%= intervention.buildingId %></td>
-        <td><%= intervention.batterieId %></td>
-        <td><%= intervention.columnId %></td>
-        <td><%= intervention.elevatorId %></td>
-        <td><%= intervention.employeeId %></td>
-        <td><%= intervention.start_date %></td>
-        <td><%= intervention.end_date %></td>
-        <td><%= intervention.result %></td>
-        <td><%= intervention.report %></td>
-        <td><%= intervention.status %></td>
-        <td><%= link_to 'Show', intervention %></td>
-        <td><%= link_to 'Edit', edit_intervention_path(intervention) %></td>
-        <td><%= link_to 'Destroy', intervention, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
       </tr>
-    <% end %>
+    <!-- % end % -->
   </tbody>
 </table>
 
