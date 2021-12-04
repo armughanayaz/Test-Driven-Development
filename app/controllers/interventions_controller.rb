@@ -39,6 +39,20 @@ class InterventionsController < ApplicationController
         format.json { render json: @intervention.errors, status: :unprocessable_entity }
       end
     end
+    #{@quote.compagnyName}
+    #{@quote.compagnyName}
+    puts "params"
+    puts params[:customerId]
+    ZendeskAPI::Ticket.create!($client, 
+      :type => "question", 
+      :subject => "", 
+      :comment => { :value => 
+        "Comment: The company  as made a quote for a building of type and wants the service. 
+      Quote information
+      Number of Elevator: 
+      Total Elevators Price:
+      Installation Fees: 
+      Total: "}, :submitter_id => $client.current_user.id , :priority => "urgent")
   end
 
   # PATCH/PUT /interventions/1 or /interventions/1.json
