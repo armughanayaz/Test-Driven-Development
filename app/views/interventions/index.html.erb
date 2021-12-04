@@ -21,6 +21,38 @@
     </tr>
   </thead>
 
+  <%= form_for @intervention.to_s, method: :post, remote: true  do |f| %>
+            <div class="field">
+			<%= f.label :ClientName %><br />
+             <%= f.collection_select :customerId, Customer.all, :id, :fullName, include_blank: true, :required => true %>
+            </div>
+			<div class="field" id="Building">
+				<%= f.label :buildingId %><br />
+        <!-- :fullName, -->
+				<%= f.collection_select  :buildingId, Customer.all, :id, :compagnyName,  include_blank: true, :required => true %>
+			</div>
+			<div class="field">
+				<%= f.label :batterieId %><br />
+        <!-- :batteries,  -->
+				<%= f.collection_select :batterieId, Building.all, :id, :fullNameAdministrator, include_blank: true, :required => true %>
+			</div>
+			<div class="field">
+				<%= f.label :columnId %><br />
+        <!-- :batteryId,  -->
+				<%= f.collection_select :columnId, Batterie.all, :id, :id, include_blank: true , :required => true%>
+			</div>
+			<div class="field">
+				<%= f.label :elevatorId %><br />
+        <!-- :elevators, :column_id,  -->
+				<%= f.collection_select :elevatorId, Column.all, :id, :id, include_blank: true, :required => true %>
+			</div>				
+
+               <div class="Text">
+				<%= f.label :Post %><br />
+				<!-- %= f.collection_select :elevatorId, Column.all, :elevators, :id, :column_id, :id, include_blank: true, :required => true % -->
+			</div>
+      <% end %>
+
   <tbody>
     <!-- % @interventions.each do |intervention| % -->
       <tr>
