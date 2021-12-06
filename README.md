@@ -5,11 +5,11 @@
     <img src="https://takleet.ca/assets/_rocket/R2-3c6296bf2343b849b947f8ccfce0de61dd34ba7f9e2a23a53d0a743bc4604e3c.png" alt="Logo" width="500" height="200">
   </a>
 
-  <h3 align="center">Rocket Elevators Information System
+  <h3 align="center">Rocket-Elevators-Foundation
 </h3>
   
   <p align="center">
-    Odyssey Program - Weeks 4 & 5
+    Odyssey Program - Weeks 9
   </p>
 </p>
 
@@ -18,7 +18,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Rocket Elevators Information System is the 4th and 5th project for the Odyssey 14 weeks program in CodeBoxx. 
+Rocket-Elevators-Foundation is the 9th week for the Odyssey 14 weeks program in CodeBoxx. 
 
 By the 4th week We have created a CRUD website using a using Ruby on Rails with the website created in the Genesis Program. 
 
@@ -47,7 +47,7 @@ If you want to test Dropbox, you have to create a customer (from backoffice) and
 
 If you want to test google maps, wait for it to finish loading, even if the browser isn't loading anymore.
 
-If you want to test watson, press on the button to load him.
+In the 9th week I have done:
 
 ## Website deployed
 
@@ -55,27 +55,13 @@ If you want to test watson, press on the button to load him.
 
 <br>
 
-## Installation
+## Created End points for Rest API's 
 
-Clone or download the .zip for this project. 
-
-Here are the commands that will have to be entered in your terminal to start the server:
-- mySQL server start
-- ruby -v (To check if a corresponding version need to be installed)
-- rails -v (To check if a corresponding version need to be installed)
-- bundle install (To install all the necessary Gems)
-- Check in the directory for config/database.yml and if necessary replace the database password by yours.
-- rails db:create
-- rails s
-
-<br>
-
-Here are the commands that will have to be entered in your terminal when modifications are made in the database:
-- Ctrl + C (to stop the server)
-- rails db:migrate reset
+## Created the tables
+- Scaffold
+-  rails db:migrate reset
 - rails db:seed
 
-<br>
 
 ## Accessing
 
@@ -94,14 +80,7 @@ To access the database, use Dbeaver or MySQLWorkbench, which shows a history of 
 
 <br>
 
-## Built With
 
-* [Ruby V-2.6.6](https://www.ruby-lang.org/en/)
-* [Rails V-5.2.6](https://guides.rubyonrails.org/)
-* [MySql V-5.7](https://dev.mysql.com/)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Postgres V-10.18](https://www.postgresql.org/docs/10/release-10-18.html)
 
 
 <br>
