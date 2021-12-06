@@ -51,7 +51,7 @@ If you want to test watson, press on the button to load him.
 
 ## Website deployed
 
-* ### [rocketlift.ca/](https://rocketlift.ca/)
+* ### [takhleet.ca/](https://takhleet.ca/)
 
 <br>
 
@@ -106,12 +106,8 @@ To access the database, use Dbeaver or MySQLWorkbench, which shows a history of 
 
 <br>
 
-<!-- TEAM MWMBERS -->
-## TEAM Project~> Members:
+<!-- MEMBERS -->
 
-- **[Ted Lemy](https://github.com/lemyted)**
-- **[Alex Wallot](https://github.com/AlexWallot)**
-- **[Luka Trudel](https://github.com/LukaTrudel)**
 - **[Armughan Ayaz Janjua](https://github.com/armughanayaz)**
 
 
