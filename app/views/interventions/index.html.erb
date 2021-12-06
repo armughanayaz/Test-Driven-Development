@@ -2,18 +2,17 @@
 
 <h1>Interventions</h1>
 
-<table>
 
 
   <%= form_for @intervention.to_s, method: :post, remote: true  do |f| %>
             <div class="field">
 			<%= f.label :ClientName %><br />
-             <%= f.collection_select :customerId, Customer.all, :id, :fullName, include_blank: true, :required => true %>
+             <%= f.collection_select :customerId, Customer.all, :id, :id, include_blank: true, :required => true %>
             </div>
 			<div class="field" id="Building">
 				<%= f.label :buildingId %><br />
         <!-- :fullName, -->
-				<%= f.collection_select  :buildingId, Customer.all, :id, :compagnyName,  include_blank: true, :required => true %>
+				<%= f.collection_select  :buildingId, Customer.all, :id, :id,  include_blank: true, :required => true %>
 			</div>
 			<div class="field">
 				<%= f.label :batterieId %><br />
@@ -37,15 +36,7 @@
 			</div>
       <% end %>
 
-  <tbody>
-    <!-- % @interventions.each do |intervention| % -->
-      <tr>
 
-
-      </tr>
-    <!-- % end % -->
-  </tbody>
-</table>
 
 <br>
 <%= javascript_include_tag "interventions" %>
