@@ -82,6 +82,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise', '~> 4.8'
 gem 'owlcarousel-rails'
+# gem 'rubocop', require: false
 
 gem 'rails_admin', '~> 2.0'
 
@@ -116,4 +117,6 @@ gem 'sendgrid-ruby'
 gem 'zendesk_api', '~> 1.13', '>= 1.13.4'
 
 gem 'twilio-ruby'
+
+gem 'authtrail'
 

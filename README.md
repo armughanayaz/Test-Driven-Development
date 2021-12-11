@@ -8,7 +8,7 @@
 </h3>
   
   <p align="center">
-    Odyssey Program - Weeks 9
+    Odyssey Program - Weeks 10
   </p>
 </p>
 
@@ -17,13 +17,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Rocket-Elevators-Foundation is the 9th week for the Odyssey 14 weeks program in CodeBoxx. 
+Quality and TDD is the 10th week for the Odyssey 14 weeks program in CodeBoxx. 
 
-By the 4th week We have created a CRUD website using a using Ruby on Rails with the website created in the Genesis Program. 
+A serie of tests were made in the Rocket_Elevators_Foundation APP using RSpec ( http://rspec.info ). To run the tests you just need to put in your command line:
 
-website used: [rocketlift.ca/](https://rocketlift.ca/)
-
-We have also included a MySql Database that saves the quotations inserted in the quote form, and an Admin page.
+bundle exec rspec --format documentation
 
 ##
 
